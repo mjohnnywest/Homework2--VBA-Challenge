@@ -10,7 +10,7 @@ VBA challenge for module 2 of SMU Data Science Course
 4. Save the sub, return to developer tab
 5. Run macro tickerpull()
 6. Wait for the code to run
-7. Ensure all values look correct before presenting.
+7. Ensure all values look correct before presenting
 
 ### Notes:
 This is a fairly rudamentary Sub. Your data has to be orgainized very specifically
