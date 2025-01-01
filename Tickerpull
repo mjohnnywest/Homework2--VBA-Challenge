@@ -4,7 +4,7 @@
 
 Sub tickerpull():
     'This first part pulls all the unique tickers in the data
-    'We have to subtract 1 for headers
+    'We have to subtract 1 for headers in numrow
 
     numrows = Application.CountA(Range("a:a"))
     Dim Unique As Integer
@@ -98,72 +98,4 @@ Sub tickerpull():
     Range("o2").Value = "Greatest % Increase"
     Range("o3").Value = "Greatest % Decrease"
     Range("o4").Value = "Greatest Total Volume"
-End Sub
-
-
-Sub changes():
- Dim Unique As Integer
-    Dim OpenPrice As Double
-    Dim ClosePrice As Double
-    Dim PercentCng As Double
-    Dim volume As Double
-    numrows = Application.CountA(Range("a:a"))
-    
-    volume = 0
-    Unique = 2
-    For i = 2 To numrows:
-        If Cells(i, 2) < Cells((i - 1), 2) Or Cells((i - 1), 2) = vbString Then
-            OpenPrice = Cells(i, 3).Value
-            volume = volume + Cells(i, 7).Value
-        ElseIf Round(Cells(2, 2).Value / Cells(i, 2).Value, 0) = 1 Then
-        'silly but effective way to dectect quarter resets. Rounding nessessary--
-        'there is occasionally a miniscule decimal. So without it the code works SOMETIMES, but fails RANDOMLY. Wasted a whole Hour...
-            ClosePrice = Cells((i - 1), 6).Value
-            
-            'Finding and printing data
-            Cells(Unique, 11).Value = (ClosePrice - OpenPrice)
-            PercentCng = (ClosePrice - OpenPrice) / OpenPrice
-            Cells(Unique, 12).Value = PercentCng
-            volume = volume + Cells(i, 7).Value
-            
-            Cells(Unique, 13).Value = volume
-                'adding color change
-                If PercentCng >= 0 Then
-                    Cells(Unique, 11).Interior.Color = vbGreen
-                Else
-                    Cells(Unique, 11).Interior.Color = vbRed
-                End If
-                
-            Unique = Unique + 1
-            volume = 0
-        Else
-            volume = volume + Cells(i, 7).Value
-
-            'need to add formatting
-        End If
-    Next i
-    
-End Sub
-
-Sub minmax():
-    MaxPerc = WorksheetFunction.Max(Range("L:L"))
-    totalcount = Application.CountA(Range("L:L"))
-    MinPerc = WorksheetFunction.Min(Range("L:L"))
-    Maxvol = WorksheetFunction.Max(Range("M:M"))
-        
-    For i = 2 To totalcount:
-        If Cells(i, 12).Value = MaxPerc Then
-            MaxRow = Cells(i, 12).Row
-            MsgBox ("Max is in row " & MaxRow)
-        ElseIf Cells(i, 12).Value = MinPerc Then
-            MinRow = Cells(i, 12).Row
-            MsgBox ("Min is in row " & MinRow)
-        End If
-        If Cells(i, 13).Value = Maxvol Then
-            Maxvol = Cells(i, 13).Row
-            MsgBox ("Max Vol is in row " & Maxvol)
-        End If
-    Next i
-
-
 End Sub
