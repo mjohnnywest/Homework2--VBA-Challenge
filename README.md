@@ -4,13 +4,13 @@ VBA challenge for module 2 of SMU Data Science Course
 
 
 ## Instructions:
-Simply open the "Developer" tab on a macro-enabled workbook of excel
-Paste in the code found in the "tickerpull" file found in this repository
-Make sure data is organized properly (see notes)
-Save the sub, return to developer tab
-Run macro tickerpull()
-Wait for the code to run
-Ensure all values look correct before presenting.
+1. Simply open the "Developer" tab on a macro-enabled workbook of excel
+2. Paste in the code found in the "tickerpull" file found in this repository
+3. Make sure data is organized properly (see notes)
+4. Save the sub, return to developer tab
+5. Run macro tickerpull()
+6. Wait for the code to run
+7. Ensure all values look correct before presenting.
 
 ### Notes:
 This is a fairly rudamentary Sub. Your data has to be orgainized very specifically
