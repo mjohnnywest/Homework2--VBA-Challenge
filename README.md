@@ -5,7 +5,7 @@ VBA challenge for module 2 of SMU Data Science Course
 
 ## Instructions:
 Simply open the "Developer" tab on a macro-enabled workbook of excel
-Paste in the code found in the "tickerpull.txt" file found in this repository
+Paste in the code found in the "tickerpull" file found in this repository
 Make sure data is organized properly (see notes)
 Save the sub, return to developer tab
 Run macro tickerpull()
