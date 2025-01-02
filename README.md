@@ -1,5 +1,5 @@
 # Homework2--VBA-Challenge
-VBA challenge for module 2 of SMU Data Science Course
+VBA challenge for module 2 of SMU Data Science Course. The code itself can be found in the file titled "tickerpull" all code was written by myself, with research from google.
 
 
 
